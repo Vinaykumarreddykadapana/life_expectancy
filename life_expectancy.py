@@ -1,74 +1,40 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[35]:
 
 
 import pandas as pd 
 import numpy as np
 
 
-# In[36]:
 
 
 df=pd.read_csv(r"C:\Users\HP\Downloads\archive (36)\life_expectancy.csv")
 
-
-# In[37]:
-
-
 df.info()
-
-
-# In[38]:
 
 
 df.isna().sum()
 
 
-# In[39]:
-
-
 df.duplicated().sum()
 
-
-# In[40]:
 
 
 df.drop_duplicates(inplace=True)
 
 
-# In[41]:
-
-
 df.duplicated().sum()
-
-
-# In[42]:
 
 
 df=df.dropna()
 
 
-# In[43]:
-
-
 df.isna().sum()
-
-
-# In[44]:
 
 
 df.describe()
 
 
-# In[45]:
-
-
 df.corr()
-
-
-# In[46]:
 
 
 import seaborn as sns
@@ -78,57 +44,31 @@ sns.heatmap(df.corr(),annot=True)
 plt.show()
 
 
-# In[47]:
-
-
-plt.figure(figsize=(20, 10))  # Adjust the figure size if needed
+plt.figure(figsize=(20, 10))  
 sns.boxplot(data=df)
 plt.title("Boxplots for All Columns")
 plt.show()
 
 
-# In[48]:
-
-
 df.info()
-
-
-# In[64]:
 
 
 unique_values = df['Country'].unique()
 
 
-# In[69]:
-
-
 unique_values
-
-
-# In[70]:
 
 
 len(unique_values)
 
 
-# In[82]:
-
-
 from sklearn.preprocessing import LabelEncoder
 label_encoder = LabelEncoder()
-
-# Fit and transform the specified column
 df['Country'] = label_encoder.fit_transform(df['Country'])
 df['Status'] = label_encoder.fit_transform(df['Status'])
 
 
-# In[83]:
-
-
 df.info()
-
-
-# In[84]:
 
 
 X = df.drop('Life expectancy', axis=1)
@@ -146,8 +86,6 @@ print('Shape of X_test = ', X_test.shape)
 print('Shape of y_test = ', y_test.shape)
 
 
-# In[85]:
-
 
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
@@ -155,8 +93,6 @@ sc.fit(X_train)
 X_train = sc.transform(X_train)
 X_test = sc.transform(X_test)
 
-
-# In[86]:
 
 
 from sklearn.linear_model import LinearRegression
@@ -168,8 +104,6 @@ lr.coef_
  
 lr.intercept_
 
-
-# In[87]:
 
 
 X_test[0, :]
@@ -185,15 +119,12 @@ lr.score(X_test, y_test,)
 y_pred = lr.predict(X_test)
 
 
-# In[88]:
-
 
 from sklearn.metrics import r2_score
  
 r2_score(y_test, y_pred)
 
 
-# In[89]:
 
 
 from sklearn.linear_model import LinearRegression
@@ -220,8 +151,6 @@ y_pred
 y_test
 
 
-# In[90]:
-
 
 from sklearn.metrics import mean_squared_error
 mse = mean_squared_error(y_test, y_pred)
@@ -230,13 +159,9 @@ rmse = np.sqrt(mse)
 mse, rmse
 
 
-# In[91]:
-
 
 r2_score(y_test, y_pred)
 
-
-# In[92]:
 
 
 from sklearn.tree import DecisionTreeRegressor
