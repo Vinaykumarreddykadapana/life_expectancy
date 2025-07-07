@@ -171,3 +171,91 @@ regressor.fit(X_train, y_train)
  
 regressor.score(X_test, y_test)
 
+
+
+
+from sklearn.ensemble import RandomForestRegressor
+
+rf = RandomForestRegressor(n_estimators=100, random_state=42)
+rf.fit(X_train, y_train)
+
+y_pred_rf = rf.predict(X_test)
+
+# Evaluation
+from sklearn.metrics import r2_score, mean_squared_error
+r2_rf = r2_score(y_test, y_pred_rf)
+mse_rf = mean_squared_error(y_test, y_pred_rf)
+rmse_rf = np.sqrt(mse_rf)
+
+print("Random Forest R2 Score:", r2_rf)
+print("Random Forest RMSE:", rmse_rf)
+
+
+
+
+
+from sklearn.ensemble import GradientBoostingRegressor
+
+gbr = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, random_state=42)
+gbr.fit(X_train, y_train)
+
+y_pred_gbr = gbr.predict(X_test)
+
+# Evaluation
+r2_gbr = r2_score(y_test, y_pred_gbr)
+mse_gbr = mean_squared_error(y_test, y_pred_gbr)
+rmse_gbr = np.sqrt(mse_gbr)
+
+print("Gradient Boosting R2 Score:", r2_gbr)
+print("Gradient Boosting RMSE:", rmse_gbr)
+
+
+
+
+
+
+
+
+
+
+
+from sklearn.svm import SVR
+
+svr = SVR(kernel='rbf')
+svr.fit(X_train, y_train)
+
+y_pred_svr = svr.predict(X_test)
+
+# Evaluation
+r2_svr = r2_score(y_test, y_pred_svr)
+mse_svr = mean_squared_error(y_test, y_pred_svr)
+rmse_svr = np.sqrt(mse_svr)
+
+print("SVR R2 Score:", r2_svr)
+print("SVR RMSE:", rmse_svr)
+
+
+
+
+from sklearn.neighbors import KNeighborsRegressor
+
+knn = KNeighborsRegressor(n_neighbors=5)
+knn.fit(X_train, y_train)
+
+y_pred_knn = knn.predict(X_test)
+
+# Evaluation
+r2_knn = r2_score(y_test, y_pred_knn)
+mse_knn = mean_squared_error(y_test, y_pred_knn)
+rmse_knn = np.sqrt(mse_knn)
+
+print("KNN R2 Score:", r2_knn)
+print("KNN RMSE:", rmse_knn)
+
+
+
+
+
+
+
+
