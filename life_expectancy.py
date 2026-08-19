@@ -7,7 +7,6 @@ df=pd.read_csv(r"C:\Users\HP\Downloads\archive (36)\life_expectancy.csv")
 
 df.info()
 
-
 df.isna().sum()
 
 
