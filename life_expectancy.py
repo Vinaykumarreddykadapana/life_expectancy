@@ -35,8 +35,6 @@ import matplotlib.pyplot as plt
 plt.figure(figsize=(10,8))
 sns.heatmap(df.corr(),annot=True)
 plt.show()
-
-
 plt.figure(figsize=(20, 10))  
 sns.boxplot(data=df)
 plt.title("Boxplots for All Columns")
