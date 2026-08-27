@@ -9,7 +9,6 @@ df.info()
 
 df.isna().sum()
 
-
 df.duplicated().sum()
 
 
