@@ -1,9 +1,7 @@
 import pandas as pd 
 import numpy as np
 df=pd.read_csv(r"C:\Users\HP\Downloads\archive (36)\life_expectancy.csv")
-
 df.info()
-
 df.isna().sum()
 
 df.duplicated().sum()
