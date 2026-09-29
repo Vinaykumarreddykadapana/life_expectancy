@@ -211,8 +211,6 @@ print("SVR R2 Score:", r2_svr)
 print("SVR RMSE:", rmse_svr)
 
 
-
-
 from sklearn.neighbors import KNeighborsRegressor
 
 knn = KNeighborsRegressor(n_neighbors=5)
@@ -227,9 +225,6 @@ rmse_knn = np.sqrt(mse_knn)
 
 print("KNN R2 Score:", r2_knn)
 print("KNN RMSE:", rmse_knn)
-
-
-
 
 
 
