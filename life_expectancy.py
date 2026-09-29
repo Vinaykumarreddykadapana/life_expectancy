@@ -45,9 +45,7 @@ label_encoder = LabelEncoder()
 df['Country'] = label_encoder.fit_transform(df['Country'])
 df['Status'] = label_encoder.fit_transform(df['Status'])
 
-
 df.info()
-
 
 X = df.drop('Life expectancy', axis=1)
 y = df['Life expectancy']
