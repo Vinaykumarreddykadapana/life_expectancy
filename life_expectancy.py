@@ -7,21 +7,15 @@ df.isna().sum()
 df.duplicated().sum()
 df.drop_duplicates(inplace=True)
 
-
 df.duplicated().sum()
-
 
 df=df.dropna()
 
-
 df.isna().sum()
-
 
 df.describe()
 
-
 df.corr()
-
 
 import seaborn as sns
 import matplotlib.pyplot as plt
