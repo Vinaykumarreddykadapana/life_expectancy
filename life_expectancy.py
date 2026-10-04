@@ -228,5 +228,3 @@ print("KNN RMSE:", rmse_knn)
 
 
 
-
-
