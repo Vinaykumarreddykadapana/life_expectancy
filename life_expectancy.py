@@ -5,13 +5,10 @@ df.info()
 df.isna().sum()
 df.duplicated().sum()
 df.drop_duplicates(inplace=True)
-
 df.duplicated().sum()
 df=df.dropna()
 df.isna().sum()
-
 df.describe()
-
 df.corr()
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -22,8 +19,6 @@ plt.figure(figsize=(20, 10))
 sns.boxplot(data=df)
 plt.title("Boxplots for All Columns")
 plt.show()
-
-
 df.info()
 
 
