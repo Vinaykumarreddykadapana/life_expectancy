@@ -20,8 +20,6 @@ sns.boxplot(data=df)
 plt.title("Boxplots for All Columns")
 plt.show()
 df.info()
-
-
 unique_values = df['Country'].unique()
 
 
