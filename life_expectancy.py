@@ -8,7 +8,6 @@ df.drop_duplicates(inplace=True)
 
 df.duplicated().sum()
 df=df.dropna()
-
 df.isna().sum()
 
 df.describe()
