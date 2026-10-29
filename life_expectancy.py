@@ -10,6 +10,8 @@ df=df.dropna()
 df.isna().sum()
 df.describe()
 df.corr()
+
+
 import seaborn as sns
 import matplotlib.pyplot as plt
 plt.figure(figsize=(10,8))
