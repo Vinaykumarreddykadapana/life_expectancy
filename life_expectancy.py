@@ -9,7 +9,6 @@ df.duplicated().sum()
 df=df.dropna()
 df.isna().sum()
 df.describe()
-
 df.corr()
 
 import seaborn as sns
